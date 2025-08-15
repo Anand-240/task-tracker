@@ -1,0 +1,136 @@
+/* 6️⃣ App.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.intro h1 {
+  text-align: center;
+  color: #4a148c;
+}
+
+.intro p {
+  text-align: center;
+  color: #555;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+nav {
+  background-color: #4a148c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffca28;
+}
+
+.task-input-container {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.task-input-container input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+.task-input-container input:focus {
+  border-color: #4a148c;
+  box-shadow: 0 0 5px #4a148c33;
+  outline: none;
+}
+
+.task-input-container button {
+  padding: 12px 20px;
+  background-color: #4a148c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.task-input-container button:hover {
+  background-color: #6a1b9a;
+  transform: scale(1.05);
+}
+
+.task-card {
+  background-color: #f3e5f5;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  color: #9e9e9e;
+}
+
+.task-card button {
+  margin-left: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.task-card button:first-child {
+  background-color: #4a148c;
+  color: white;
+}
+
+.task-card button:first-child:hover {
+  background-color: #6a1b9a;
+  transform: scale(1.1);
+}
+
+.task-card button:last-child {
+  background-color: #ff7043;
+  color: white;
+}
+
+.task-card button:last-child:hover {
+  background-color: #f4511e;
+  transform: scale(1.1);
+}

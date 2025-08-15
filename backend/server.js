@@ -7,11 +7,28 @@ import taskRoutes from "./routes/taskRoutes.js";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+// Log every incoming request
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.originalUrl}`);
+  next();
+});
+app.use(cors({
+  origin: "http://localhost:3000", // your frontend origin
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
 
 // Routes
+app.use("/api/auth", (req, res, next) => {
+  console.log("Reached /api/auth route handler");
+  next();
+});
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", (req, res, next) => {
+  console.log("Reached /api/tasks route handler");
+  next();
+});
 app.use("/api/tasks", taskRoutes);
 
 // Modern Mongoose connection without deprecated options

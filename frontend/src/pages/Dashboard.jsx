@@ -8,7 +8,7 @@ function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/tasks");
+      const res = await axios.get("http://localhost:5001/api/tasks");
       setTasks(res.data);
     } catch (err) {
       console.error(err);
@@ -18,7 +18,7 @@ function Dashboard() {
   const addTask = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/tasks", { title }, {
+      await axios.post("http://localhost:5001/api/tasks", { title }, {
         headers: { "Content-Type": "application/json" },
       });
       setTitle("");
@@ -32,7 +32,7 @@ function Dashboard() {
     const task = tasks.find((t) => t._id === id);
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `http://localhost:5001/api/tasks/${id}`,
         { completed: !task.completed },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -44,7 +44,7 @@ function Dashboard() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+      await axios.delete(`http://localhost:5001/api/tasks/${id}`);
       fetchTasks();
     } catch (err) {
       console.error(err);

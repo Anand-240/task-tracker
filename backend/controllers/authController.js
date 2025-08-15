@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 
 // Signup
 export const signup = async (req, res) => {
+  console.log("Inside signup controller");
   const { name, email, password } = req.body;
   try {
     const existingUser = await User.findOne({ email });
@@ -20,6 +21,7 @@ export const signup = async (req, res) => {
 
 // Login
 export const login = async (req, res) => {
+  console.log("Inside login controller");
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
